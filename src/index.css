@@ -18,11 +18,11 @@ body {
   }
 }
 
-.container > div {
-  padding: 1.5rem;
+.container > * {
   overflow: auto;
+  margin: 0;
 }
 
-.output {
-  background: #ddd;
+.container > div {
+  padding: 1.5rem;
 }

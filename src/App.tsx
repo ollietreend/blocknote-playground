@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { BlockNoteEditor, Block } from '@blocknote/core';
 import { BlockNoteView, useBlockNote } from '@blocknote/react';
-import '@blocknote/core/style.css';
+import theme from './editor/theme';
+import JsonHighlighter from './components/JsonHighlighter';
 
 function App() {
   // Stores the editor's contents as an array of Block objects.
@@ -18,10 +19,8 @@ function App() {
   // Renders the editor instance using a React component.
   return (
     <div className="container">
-      <BlockNoteView editor={editor} />
-      <div className="output">
-        <pre>{JSON.stringify(blocks, null, 2)}</pre>
-      </div>
+      <BlockNoteView editor={editor} theme={theme} />
+      <JsonHighlighter data={blocks} />
     </div>
   );
 }
